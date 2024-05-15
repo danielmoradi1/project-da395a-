@@ -7,11 +7,12 @@ export default function Application() {
 
   function addPlaces(place) {
     setPlaces([...places, place]);
+    console.log(place);
   }
 
   return (
     <>
-      <SearchForm />
+      <SearchForm addPlaces={addPlaces} />
     </>
   );
 }
