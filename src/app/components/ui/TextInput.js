@@ -1,7 +1,11 @@
-export default function TextInput({ placeholder }) {
+export default function TextInput({ placeholder, setter }) {
   return (
     <>
-      <input type="text" placeholder={placeholder} />
+      <input
+        type="text"
+        placeholder={placeholder}
+        onChange={(e) => setter(e.target.value)}
+      />
     </>
   );
 }

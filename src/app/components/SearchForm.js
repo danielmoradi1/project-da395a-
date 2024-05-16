@@ -2,7 +2,7 @@ import { useState } from "react";
 import getPlaces from "../api/getPlaces";
 import RadioInput from "./ui/RadioInput";
 import TextInput from "./ui/TextInput";
-import ButtonInput from "./ui/buttonInput";
+import ButtonInput from "./ui/ButtonInput";
 
 export default function SearchForm({ addPlaces }) {
   const [type, setType] = useState();
@@ -11,6 +11,7 @@ export default function SearchForm({ addPlaces }) {
   const [searchResults, setSearchResults] = useState([]);
 
   async function searchPlace() {
+    console.log(city);
     console.log("Hello");
     const response = await getPlaces(city, type);
     addPlaces(response);
@@ -18,10 +19,7 @@ export default function SearchForm({ addPlaces }) {
 
   return (
     <>
-      <TextInput
-        placeholder="Search City or Address.."
-        onChange={(e) => setCity(e.target.value)}
-      />
+      <TextInput placeholder="Search City or Address.." setter={setCity} />
       <RadioInput
         label="Restaurant"
         value="Restaurant"
