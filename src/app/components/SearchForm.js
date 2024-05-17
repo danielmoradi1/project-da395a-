@@ -12,9 +12,10 @@ export default function SearchForm({ addPlaces }) {
 
   async function searchPlace() {
     console.log(city);
-    console.log("Hello");
-    const response = await getPlaces(city, type);
-    addPlaces(response);
+    if (city && type) {
+      const response = await getPlaces(city, type);
+      addPlaces(response);
+    }
   }
 
   return (
