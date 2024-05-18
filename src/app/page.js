@@ -7,6 +7,7 @@ export default function Application() {
   const [places, setPlaces] = useState([]);
 
   function addPlaces(place) {
+    console.log(place);
     setPlaces(place);
   }
 
