@@ -8,6 +8,7 @@ export default function CardList({ places }) {
           key={index}
           name={place.name}
           rating={place.rating}
+          // Check if (place.photos[0].photo_reference)
           imageId={place.photos[0].photo_reference}
         />
       ))}
