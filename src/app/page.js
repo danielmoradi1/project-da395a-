@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import SearchForm from "./components/SearchForm";
 import CardList from "./components/CardList";
+import MapsContainer from "./components/MapsContainer";
 import {
   clearLocalStorage,
   loadLocalStorage,
@@ -33,6 +34,7 @@ export default function Application() {
     <>
       <SearchForm addPlaces={addPlaces} />
       <CardList places={places} onFavorite={addFavoritedPlace} />
+      <MapsContainer />
     </>
   );
 }
