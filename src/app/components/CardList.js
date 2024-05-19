@@ -1,6 +1,6 @@
 import Card from "./ui/Card";
 
-export default function CardList({ places }) {
+export default function CardList({ places, onFavorite }) {
   return (
     <section>
       {places.map((place, index) => (
@@ -10,6 +10,7 @@ export default function CardList({ places }) {
           rating={place.rating}
           // Check if (place.photos[0].photo_reference)
           imageId={place.photos[0].photo_reference}
+          onFavorite={() => onFavorite(place)}
         />
       ))}
     </section>
