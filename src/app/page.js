@@ -34,7 +34,7 @@ export default function Application() {
     <>
       <SearchForm addPlaces={addPlaces} />
       <CardList places={places} onFavorite={addFavoritedPlace} />
-      <MapsContainer />
+      <MapsContainer locations={favoritedPlaces} />
     </>
   );
 }
