@@ -5,18 +5,30 @@ import TextInput from "./ui/TextInput";
 import ButtonInput from "./ui/ButtonInput";
 
 export default function SearchForm({ addPlaces }) {
-  const [type, setType] = useState();
-  const [city, setCity] = useState();
-  const [Error, setError] = useState();
-  const [searchResults, setSearchResults] = useState([]);
+  const [type, setType] = useState("");
+  const [city, setCity] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  //Ett state för isLoading där vid början av try{} så sätts den som "true"
-  //och vid finally{} tillbaka till "false" och baserat på detta state rendera en "loader/spinner"
   async function searchPlace() {
-    console.log(`You have searched for ${type}'s in ${city}`);
-    if (city && type) {
+    console.log(`You have searched for ${type}s in ${city}`);
+    if (!city || !type) {
+      setError("Please select both a city and a type.");
+      return;
+    }
+    setError("");
+    setIsLoading(true);
+    try {
       const response = await getPlaces(city, type);
-      addPlaces(response.results);
+      if (response.error) {
+        setError(response.error.message);
+      } else {
+        addPlaces(response.results);
+      }
+    } catch (err) {
+      setError("An error occurred while fetching places.");
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -29,9 +41,24 @@ export default function SearchForm({ addPlaces }) {
         checked={type}
         setType={setType}
       />
-      <RadioInput label="Café" value="Café" checked={type} setType={setType} />
-      <RadioInput label="Bar" value="Bar" checked={type} setType={setType} />
-      <ButtonInput value={"Search"} onClick={searchPlace} />
+      <RadioInput
+        label="Café"
+        value="Café"
+        checked={type}
+        setType={setType}
+      />
+      <RadioInput
+        label="Bar"
+        value="Bar"
+        checked={type}
+        setType={setType}
+      />
+      {error && <div style={{ color: 'red' }}>{error}</div>}
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <ButtonInput value="Search" onClick={searchPlace} />
+      )}
     </>
   );
 }
