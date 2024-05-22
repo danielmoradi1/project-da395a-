@@ -3,11 +3,7 @@ import { useGlobalContext } from "./context/globalContext";
 import SearchForm from "./components/SearchForm";
 import CardList from "./components/CardList";
 import MapsContainer from "./components/MapsContainer";
-import {
-  clearLocalStorage,
-  loadLocalStorage,
-  saveToLocalStorage,
-} from "./utils/localStorage";
+import { clearLocalStorage } from "./utils/localStorage";
 
 export default function Application() {
   const { favoritedPlaces, addFavoritedPlace, places, addPlaces } =

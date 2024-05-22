@@ -18,7 +18,6 @@ export const GlobalContextProvider = ({ children }) => {
       setFavoritedPlaces([...favoritedPlaces, place]);
     }
   }
-  // clearLocalStorage();
 
   function addPlaces(place) {
     console.log(place);
