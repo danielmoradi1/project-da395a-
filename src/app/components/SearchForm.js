@@ -21,6 +21,8 @@ export default function SearchForm({ addPlaces }) {
     try {
       const response = await getPlaces(city, type);
       if (response.error) {
+        //Ur ett säkerhetsperspektiv inte värt att rendera detta
+        //Kanske ett mer generiskt meddelande såsom "An error occured.." som nedan.
         setError(response.error.message);
       } else {
         addPlaces(response.results);
@@ -41,19 +43,9 @@ export default function SearchForm({ addPlaces }) {
         checked={type}
         setType={setType}
       />
-      <RadioInput
-        label="Café"
-        value="Café"
-        checked={type}
-        setType={setType}
-      />
-      <RadioInput
-        label="Bar"
-        value="Bar"
-        checked={type}
-        setType={setType}
-      />
-      {error && <div style={{ color: 'red' }}>{error}</div>}
+      <RadioInput label="Café" value="Café" checked={type} setType={setType} />
+      <RadioInput label="Bar" value="Bar" checked={type} setType={setType} />
+      {error && <div style={{ color: "red" }}>{error}</div>}
       {isLoading ? (
         <div>Loading...</div>
       ) : (
