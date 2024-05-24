@@ -11,6 +11,7 @@ export default function Application() {
   // clearLocalStorage();
 
   return (
+    //Bryt in till component?
     <div className="section">
       <div className="title-container">
         <h1 className="title">Find your favorite places</h1>
