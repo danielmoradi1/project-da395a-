@@ -10,8 +10,6 @@ export default function SearchForm({ addPlaces }) {
   const [Error, setError] = useState();
   const [searchResults, setSearchResults] = useState([]);
 
-  //Ett state för isLoading där vid början av try{} så sätts den som "true"
-  //och vid finally{} tillbaka till "false" och baserat på detta state rendera en "loader/spinner"
   async function searchPlace() {
     console.log(`You have searched for ${type}'s in ${city}`);
     if (city && type) {
@@ -21,17 +19,34 @@ export default function SearchForm({ addPlaces }) {
   }
 
   return (
-    <>
-      <TextInput placeholder="Search City or Address.." setter={setCity} />
-      <RadioInput
-        label="Restaurant"
-        value="Restaurant"
-        checked={type}
-        setType={setType}
+    <div className="field">
+      <TextInput
+        className="input"
+        placeholder="Search City or Address.."
+        setter={setCity}
       />
-      <RadioInput label="Café" value="Café" checked={type} setType={setType} />
-      <RadioInput label="Bar" value="Bar" checked={type} setType={setType} />
-      <ButtonInput value={"Search"} onClick={searchPlace} />
-    </>
+      <div className="control">
+        <RadioInput
+          label="Restaurant"
+          value="Restaurant"
+          checked={type}
+          setType={setType}
+        />
+        <RadioInput
+          label="Café"
+          value="Café"
+          checked={type}
+          setType={setType}
+        />
+        <RadioInput label="Bar" value="Bar" checked={type} setType={setType} />
+      </div>
+      <div className="control">
+        <ButtonInput
+          className="has-text-success"
+          value={"Search"}
+          onClick={searchPlace}
+        />
+      </div>
+    </div>
   );
 }
