@@ -1,11 +1,24 @@
+import Image from "next/image";
 import getImageUrl from "@/app/utils/getImageUrl";
 
+const ImageNotFound = "/images/imageNotFound.jpg";
+
 export default function Card({ name, adress, rating, imageId, onFavorite }) {
+  const imageUrl = imageId ? getImageUrl(1000, imageId) : null;
   return (
     <div className="card">
       <div className="card-image">
         <figure className="image is-4by3">
-          <img src={getImageUrl(1000, imageId)} alt={name} />
+          {imageUrl ? (
+        <img src={imageUrl} alt={name} />
+      ) : (
+        <Image
+          src={ImageNotFound}
+          alt="Image Not Found"
+          width={200}
+          height={200}
+        />
+      )}
         </figure>
       </div>
       <div className="card-content">

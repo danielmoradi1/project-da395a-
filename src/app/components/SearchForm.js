@@ -5,16 +5,32 @@ import TextInput from "./ui/TextInput";
 import ButtonInput from "./ui/ButtonInput";
 
 export default function SearchForm({ addPlaces }) {
-  const [type, setType] = useState();
-  const [city, setCity] = useState();
-  const [Error, setError] = useState();
-  const [searchResults, setSearchResults] = useState([]);
+  const [type, setType] = useState("");
+  const [city, setCity] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   async function searchPlace() {
-    console.log(`You have searched for ${type}'s in ${city}`);
-    if (city && type) {
+    console.log(`You have searched for ${type}s in ${city}`);
+    if (!city || !type) {
+      setError("Please select both a city and a type.");
+      return;
+    }
+    setError("");
+    setIsLoading(true);
+    try {
       const response = await getPlaces(city, type);
-      addPlaces(response.results);
+      if (response.error) {
+        //Ur ett säkerhetsperspektiv inte värt att rendera detta
+        //Kanske ett mer generiskt meddelande såsom "An error occured.." som nedan.
+        setError(response.error.message);
+      } else {
+        addPlaces(response.results);
+      }
+    } catch (err) {
+      setError("An error occurred while fetching places.");
+    } finally {
+      setIsLoading(false);
     }
   }
 

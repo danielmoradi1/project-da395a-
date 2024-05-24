@@ -4,6 +4,12 @@ import "../styles/map.css"
 
 
 export default function MapsContainer() {
+  const apiKey = process.env.NEXT_PUBLIC_MAPS_KEY;
+  //Behöver vi rendera detta till användarna?
+  if (!apiKey) {
+    return <div>Error: Google Maps API key is missing</div>;
+  }
+
   return (
     <div className="map-view">
       <APIProvider apiKey={process.env.NEXT_PUBLIC_MAPS_KEY}>
@@ -12,7 +18,7 @@ export default function MapsContainer() {
           style={{ width: "100%", height: "40vh" }}
           defaultCenter={{ lat: 22.54992, lng: 0 }}
           defaultZoom={3}
-          gestureHandling={"greedy"}
+          gestureHandling="greedy"
           disableDefaultUI={true}
         >
           <PinMarker locations={{ lat: -33.8567844, lng: 151.213108 }} />
