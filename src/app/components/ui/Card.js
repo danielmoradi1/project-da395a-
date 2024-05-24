@@ -10,15 +10,15 @@ export default function Card({ name, adress, rating, imageId, onFavorite }) {
       <div className="card-image">
         <figure className="image is-4by3">
           {imageUrl ? (
-        <img src={imageUrl} alt={name} />
-      ) : (
-        <Image
-          src={ImageNotFound}
-          alt="Image Not Found"
-          width={200}
-          height={200}
-        />
-      )}
+            <img src={imageUrl} alt={name} />
+          ) : (
+            <Image
+              src={ImageNotFound}
+              alt="Image Not Found"
+              width={200}
+              height={200}
+            />
+          )}
         </figure>
       </div>
       <div className="card-content">

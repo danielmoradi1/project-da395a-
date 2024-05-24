@@ -2,7 +2,7 @@ import { APIProvider, Map } from "@vis.gl/react-google-maps";
 import PinMarker from "./ui/PinMarker";
 import "../styles/map.css";
 
-export default function MapsContainer() {
+export default function MapsContainer({ locations }) {
   return (
     <div className="map-view">
       <APIProvider apiKey={process.env.NEXT_PUBLIC_MAPS_KEY}>
@@ -14,7 +14,9 @@ export default function MapsContainer() {
           gestureHandling="greedy"
           disableDefaultUI={true}
         >
-          <PinMarker locations={{ lat: -33.8567844, lng: 151.213108 }} />
+          {locations.map((location, index) => (
+            <PinMarker key={index} location={location.geometry.location} />
+          ))}
         </Map>
       </APIProvider>
     </div>
