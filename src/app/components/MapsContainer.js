@@ -1,15 +1,8 @@
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 import PinMarker from "./ui/PinMarker";
-import "../styles/map.css"
-
+import "../styles/map.css";
 
 export default function MapsContainer() {
-  const apiKey = process.env.NEXT_PUBLIC_MAPS_KEY;
-  //Behöver vi rendera detta till användarna?
-  if (!apiKey) {
-    return <div>Error: Google Maps API key is missing</div>;
-  }
-
   return (
     <div className="map-view">
       <APIProvider apiKey={process.env.NEXT_PUBLIC_MAPS_KEY}>
