@@ -1,4 +1,5 @@
 import { GlobalContextProvider } from "./context/globalContext";
+import "./styles/globals.css";
 
 export const metadata = {
   title: "Smultronställen",
@@ -9,7 +10,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <GlobalContextProvider>{children}</GlobalContextProvider>
+        <GlobalContextProvider>
+          <section className="section">
+            <div className="container">{children}</div>
+          </section>
+        </GlobalContextProvider>
       </body>
     </html>
   );

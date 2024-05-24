@@ -11,10 +11,14 @@ export default function Application() {
   // clearLocalStorage();
 
   return (
-    <>
+    <div className="section">
+      <div className="title-container">
+        <h1 className="title">Find your favorite places</h1>
+      </div>
+
       <SearchForm addPlaces={addPlaces} />
-      <CardList places={places} onFavorite={addFavoritedPlace} />
       <MapsContainer locations={favoritedPlaces} />
-    </>
+      <CardList places={places} onFavorite={addFavoritedPlace} />
+    </div>
   );
 }

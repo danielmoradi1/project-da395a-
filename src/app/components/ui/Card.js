@@ -3,12 +3,13 @@ import getImageUrl from "@/app/utils/getImageUrl";
 
 const ImageNotFound = "/images/imageNotFound.jpg";
 
-export default function Card({ name, rating, imageId, onFavorite }) {
-  const imageUrl = imageId ? getImageUrl(200, imageId) : null;
-
+export default function Card({ name, adress, rating, imageId, onFavorite }) {
+  const imageUrl = imageId ? getImageUrl(1000, imageId) : null;
   return (
-    <article>
-      {imageUrl ? (
+    <div className="card">
+      <div className="card-image">
+        <figure className="image is-4by3">
+          {imageUrl ? (
         <img src={imageUrl} alt={name} />
       ) : (
         <Image
@@ -18,9 +19,22 @@ export default function Card({ name, rating, imageId, onFavorite }) {
           height={200}
         />
       )}
-      <h2>{name}</h2>
-      <p>{rating}</p>
-      <button onClick={onFavorite}>Favorite</button>
-    </article>
+        </figure>
+      </div>
+      <div className="card-content">
+        <div className="media">
+          <div className="media-content">
+            <p className="title is-4">{name}</p>
+            <p className="subtitle is-6">{adress}</p>
+            <p className="subtitle is-6">Rating: {rating}</p>
+          </div>
+        </div>
+        <div className="content">
+          <button className="button is-primary" onClick={onFavorite}>
+            Favorite
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }

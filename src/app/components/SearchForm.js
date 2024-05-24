@@ -35,22 +35,34 @@ export default function SearchForm({ addPlaces }) {
   }
 
   return (
-    <>
-      <TextInput placeholder="Search City or Address.." setter={setCity} />
-      <RadioInput
-        label="Restaurant"
-        value="Restaurant"
-        checked={type}
-        setType={setType}
+    <div className="field">
+      <TextInput
+        className="input"
+        placeholder="Search City or Address.."
+        setter={setCity}
       />
-      <RadioInput label="Café" value="Café" checked={type} setType={setType} />
-      <RadioInput label="Bar" value="Bar" checked={type} setType={setType} />
-      {error && <div style={{ color: "red" }}>{error}</div>}
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : (
-        <ButtonInput value="Search" onClick={searchPlace} />
-      )}
-    </>
+      <div className="control">
+        <RadioInput
+          label="Restaurant"
+          value="Restaurant"
+          checked={type}
+          setType={setType}
+        />
+        <RadioInput
+          label="Café"
+          value="Café"
+          checked={type}
+          setType={setType}
+        />
+        <RadioInput label="Bar" value="Bar" checked={type} setType={setType} />
+      </div>
+      <div className="control">
+        <ButtonInput
+          className="has-text-success"
+          value={"Search"}
+          onClick={searchPlace}
+        />
+      </div>
+    </div>
   );
 }
