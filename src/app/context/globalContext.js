@@ -8,6 +8,12 @@ export const GlobalContextProvider = ({ children }) => {
   const storedFavoritedPlaces = loadLocalStorage("favoritedPlaces");
   const [favoritedPlaces, setFavoritedPlaces] = useState(storedFavoritedPlaces);
   const [places, setPlaces] = useState([]);
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  function toggleConfetti() {
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 1);
+  }
 
   useEffect(() => {
     saveToLocalStorage("favoritedPlaces", favoritedPlaces);
@@ -25,7 +31,14 @@ export const GlobalContextProvider = ({ children }) => {
   }
   return (
     <GlobalContext.Provider
-      value={{ favoritedPlaces, addFavoritedPlace, places, addPlaces }}
+      value={{
+        favoritedPlaces,
+        addFavoritedPlace,
+        places,
+        addPlaces,
+        toggleConfetti,
+        showConfetti,
+      }}
     >
       {children}
     </GlobalContext.Provider>

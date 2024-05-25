@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useGlobalContext } from "../context/globalContext";
 import getPlaces from "../api/getPlaces";
 import RadioInput from "./ui/RadioInput";
 import TextInput from "./ui/TextInput";
@@ -48,7 +47,7 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
         const randomIndex = Math.floor(Math.random() * response.results.length);
         const randomPlace = response.results[randomIndex];
         addPlaces([randomPlace]);
-        onFeelLucky(); // Trigger confetti when the "I Feel Lucky" button is clicked
+        onFeelLucky();
       }
     } catch (err) {
       setError("An error occurred while fetching places.");
