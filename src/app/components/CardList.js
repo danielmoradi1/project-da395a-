@@ -1,10 +1,17 @@
 import Card from "./ui/Card";
 
-export default function CardList({ places, onFavorite, onRemoveFavorite, favoritedPlaces }) {
+export default function CardList({
+  places,
+  onFavorite,
+  onRemoveFavorite,
+  favoritedPlaces,
+}) {
   return (
     <div className="columns is-multiline">
       {places.map((place, index) => {
-        const isFavorited = favoritedPlaces.some(favorited => favorited.name === place.name);
+        const isFavorited = favoritedPlaces.some(
+          (favorited) => favorited.reference === place.reference
+        );
         return (
           <div className="column is-one-quarter" key={index}>
             <Card
