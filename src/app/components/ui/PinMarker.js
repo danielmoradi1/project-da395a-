@@ -16,7 +16,7 @@ export default function PinMarker({ location, locationData }) {
         onClick={() => setInfowindowOpen((prev) => !prev)}
         position={location}
       >
-        <Pin background={"#BF4348"} glyphColor={"#000"} borderColor={"#000"} />
+        <Pin background={"#04D1B2"} glyphColor={"#000"} borderColor={"#000"} />
       </AdvancedMarker>
       {infowindowOpen && (
         <InfoWindow

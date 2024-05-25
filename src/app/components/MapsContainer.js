@@ -4,7 +4,7 @@ import "../styles/map.css";
 
 export default function MapsContainer({ locations = [] }) {
   return (
-    <div className="map-view">
+    <div className="map-view" style={{ borderRadius: 8, overflow: "hidden" }}>
       <APIProvider apiKey={process.env.NEXT_PUBLIC_MAPS_KEY}>
         <Map
           mapId="3573efe3f3b75066"
