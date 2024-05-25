@@ -8,3 +8,7 @@ body {
   background-color: hsl(171, 100%, 36%);
   color: #fff;
 }
+
+p {
+  color: black;
+}
