@@ -10,6 +10,7 @@ export default function Application() {
   const {
     favoritedPlaces,
     addFavoritedPlace,
+    removeFavoritedPlace,
     places,
     addPlaces,
     toggleConfetti,
@@ -22,7 +23,12 @@ export default function Application() {
       <PageHeader />
       <SearchForm addPlaces={addPlaces} onFeelLucky={toggleConfetti} />
       <MapsContainer locations={favoritedPlaces} />
-      <CardList places={places} onFavorite={addFavoritedPlace} />
+      <CardList
+        places={places}
+        onFavorite={addFavoritedPlace}
+        onRemoveFavorite={removeFavoritedPlace}
+        favoritedPlaces={favoritedPlaces}
+      />
     </div>
   );
 }

@@ -3,8 +3,9 @@ import getImageUrl from "@/app/utils/getImageUrl";
 
 const ImageNotFound = "/images/imageNotFound.jpg";
 
-export default function Card({ name, adress, rating, imageId, onFavorite }) {
+export default function Card({ name, adress, rating, imageId, onFavorite, onRemoveFavorite, isFavorited }) {
   const imageUrl = imageId ? getImageUrl(1000, imageId) : null;
+
   return (
     <div className="card">
       <div className="card-image">
@@ -30,9 +31,15 @@ export default function Card({ name, adress, rating, imageId, onFavorite }) {
           </div>
         </div>
         <div className="content">
-          <button className="button is-primary" onClick={onFavorite}>
-            Favorite
-          </button>
+          {isFavorited ? (
+            <button className="button is-danger" onClick={onRemoveFavorite}>
+              Remove Favorite
+            </button>
+          ) : (
+            <button className="button is-primary" onClick={onFavorite}>
+              Favorite
+            </button>
+          )}
         </div>
       </div>
     </div>

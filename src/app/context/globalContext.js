@@ -6,7 +6,7 @@ import { loadLocalStorage, saveToLocalStorage } from "../utils/localStorage";
 const GlobalContext = createContext();
 export const GlobalContextProvider = ({ children }) => {
   const storedFavoritedPlaces = loadLocalStorage("favoritedPlaces");
-  const [favoritedPlaces, setFavoritedPlaces] = useState(storedFavoritedPlaces);
+  const [favoritedPlaces, setFavoritedPlaces] = useState(storedFavoritedPlaces || []);
   const [places, setPlaces] = useState([]);
   const [showConfetti, setShowConfetti] = useState(false);
 
@@ -25,15 +25,21 @@ export const GlobalContextProvider = ({ children }) => {
     }
   }
 
+  function removeFavoritedPlace(place) {
+    setFavoritedPlaces(favoritedPlaces.filter((favorited) => favorited.name !== place.name));
+  }
+
   function addPlaces(place) {
     console.log(place);
     setPlaces(place);
   }
+
   return (
     <GlobalContext.Provider
       value={{
         favoritedPlaces,
         addFavoritedPlace,
+        removeFavoritedPlace,
         places,
         addPlaces,
         toggleConfetti,
