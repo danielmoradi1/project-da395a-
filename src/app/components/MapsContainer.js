@@ -9,8 +9,8 @@ export default function MapsContainer() {
         <Map
           mapId="3573efe3f3b75066"
           style={{ width: "100%", height: "40vh" }}
-          defaultCenter={{ lat: 22.54992, lng: 0 }}
-          defaultZoom={3}
+          defaultCenter={{ lat: 60.1282, lng: 18.6435 }}
+          defaultZoom={4.5}
           gestureHandling="greedy"
           disableDefaultUI={true}
         >
