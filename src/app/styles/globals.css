@@ -1,7 +1,10 @@
 @import "~bulma/css/bulma.css";
 
 body {
-    font-family: 'Arial', sans-serif;
-    
+  font-family: "Arial", sans-serif;
 }
 
+.button:hover {
+  background-color: hsl(171, 100%, 36%);
+  color: #fff;
+}

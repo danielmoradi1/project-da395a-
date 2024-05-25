@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BallTriangle } from "react-loader-spinner";
 import getPlaces from "../api/getPlaces";
 import RadioInput from "./ui/RadioInput";
 import TextInput from "./ui/TextInput";
@@ -80,7 +81,18 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
       </div>
       {error && <div style={{ color: "#ff718d" }}>{error}</div>}
       {isLoading ? (
-        <div>Loading...</div>
+        <div className="is-flex is-justify-content-center is-align-items-center">
+          <BallTriangle
+            height={100}
+            width={100}
+            radius={5}
+            color="#04D1B2"
+            ariaLabel="ball-triangle-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+          />
+        </div>
       ) : (
         <div className="control">
           <ButtonInput
@@ -90,7 +102,7 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
           />
           <ButtonInput
             className="has-text-info"
-            value={"I Feel Lucky"}
+            value={"Roll The Dice"}
             onClick={feelLucky}
           />
         </div>
