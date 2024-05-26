@@ -1,5 +1,7 @@
 import Image from "next/image";
 import getImageUrl from "@/app/utils/getImageUrl";
+import "../../styles/card.css";
+import { getStarIcons } from "./starRating";
 
 const ImageNotFound = "/images/imageNotFound.jpg";
 
@@ -27,7 +29,7 @@ export default function Card({ name, adress, rating, imageId, onFavorite, onRemo
           <div className="media-content">
             <p className="title is-4">{name}</p>
             <p className="subtitle is-6">{adress}</p>
-            <p className="subtitle is-6">Rating: {rating}</p>
+            <p className="rating">{getStarIcons(rating)}</p>
           </div>
         </div>
         <div className="content">

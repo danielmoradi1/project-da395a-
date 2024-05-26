@@ -4,6 +4,7 @@ import getPlaces from "../api/getPlaces";
 import RadioInput from "./ui/RadioInput";
 import TextInput from "./ui/TextInput";
 import ButtonInput from "./ui/ButtonInput";
+import "../styles/SearchForm.css";
 
 export default function SearchForm({ addPlaces, onFeelLucky }) {
   const [type, setType] = useState("");
@@ -64,7 +65,7 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
         placeholder="Search City or Address.."
         setter={setCity}
       />
-      <div className="control">
+      <div className="radioInput">
         <RadioInput
           label="Restaurant"
           value="restaurant"
@@ -94,14 +95,14 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
           />
         </div>
       ) : (
-        <div className="control">
+        <div className="search-btn-container">
           <ButtonInput
-            className="has-text-success"
+            className="btn"
             value={"Search"}
             onClick={searchPlace}
           />
           <ButtonInput
-            className="has-text-info"
+            className="btn"
             value={"Roll The Dice"}
             onClick={feelLucky}
           />

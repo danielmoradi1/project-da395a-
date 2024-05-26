@@ -1,0 +1,20 @@
+
+.radioInput{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+}
+
+.title-container{
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 2em;
+}
+
+.search-btn-container{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}

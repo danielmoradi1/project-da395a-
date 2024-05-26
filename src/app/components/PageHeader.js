@@ -1,3 +1,5 @@
+import "../styles/searchform.css";
+
 export default function PageHeader() {
   return (
     <div className="title-container">

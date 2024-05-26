@@ -1,7 +1,12 @@
 export default function ButtonInput({ value, onClick }) {
   return (
     <>
-      <input className="button" type="button" value={value} onClick={onClick} />
+      <input
+        className="button is-primary"
+        type="button"
+        value={value}
+        onClick={onClick}
+      />
     </>
   );
 }

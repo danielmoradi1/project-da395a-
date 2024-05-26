@@ -1,0 +1,15 @@
+.card{
+    width: 100%;
+    height: 100%;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.star-icon {
+    color: #e9d668;
+    margin-right: 4px;
+    font-size: 20px;
+}
