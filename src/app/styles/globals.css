@@ -4,7 +4,7 @@ body {
   font-family: "Arial", sans-serif;
 }
 
-.button:hover {
+.button.is-primary:hover {
   background-color: hsl(171, 100%, 36%);
   color: #fff;
 }
