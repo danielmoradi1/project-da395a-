@@ -1,19 +1,38 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BallTriangle } from "react-loader-spinner";
 import getPlaces from "../api/getPlaces";
 import RadioInput from "./ui/RadioInput";
-import TextInput from "./ui/TextInput";
 import ButtonInput from "./ui/ButtonInput";
+import Selector from "./Selector";
+import { Country, City } from "country-state-city";
 import "../styles/SearchForm.css";
 
 export default function SearchForm({ addPlaces, onFeelLucky }) {
   const [type, setType] = useState("");
-  const [city, setCity] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const [country, setCountry] = useState(null);
+  const [city, setCity] = useState(null);
+
+  const [countries, setCountries] = useState([]);
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    setCountries(Country.getAllCountries());
+  }, []);
+
+  useEffect(() => {
+    if (country) {
+      setCities(City.getCitiesOfCountry(country.isoCode));
+      setCity(null);
+    } else {
+      setCities([]);
+    }
+  }, [country]);
+
   async function searchPlace() {
-    console.log(`You have searched for ${type}s in ${city}`);
+    console.log(`You have searched for ${type}s in ${city?.name}`);
     if (!city || !type) {
       setError("Please select both a city and a type.");
       return;
@@ -21,7 +40,7 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
     setError("");
     setIsLoading(true);
     try {
-      const response = await getPlaces(city, type);
+      const response = await getPlaces(city.name, type);
       if (response.error) {
         setError("An error occurred while fetching places.");
       } else {
@@ -42,7 +61,7 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
     setError("");
     setIsLoading(true);
     try {
-      const response = await getPlaces(city, type);
+      const response = await getPlaces(city.name, type);
       if (response.error) {
         setError("An error occurred while fetching places.");
       } else {
@@ -60,11 +79,18 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
 
   return (
     <div className="field">
-      <TextInput
-        className="input"
-        placeholder="Search City or Address.."
-        setter={setCity}
+      <Selector
+        data={countries}
+        selected={country}
+        setSelected={setCountry}
       />
+      {cities.length > 0 && (
+        <Selector
+          data={cities}
+          selected={city}
+          setSelected={setCity}
+        />
+      )}
       <div className="radioInput">
         <RadioInput
           label="Restaurant"
