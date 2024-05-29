@@ -4,7 +4,7 @@ import getPlaces from "../api/getPlaces";
 import RadioInput from "./ui/RadioInput";
 import TextInput from "./ui/TextInput";
 import ButtonInput from "./ui/ButtonInput";
-import "../styles/SearchForm.css";
+import "../styles/searchform.css";
 
 export default function SearchForm({ addPlaces, onFeelLucky }) {
   const [type, setType] = useState("");

@@ -1,9 +1,10 @@
-import "../styles/searchform.css";
+import "../styles/globals.css";
 
 export default function PageHeader() {
   return (
     <div className="title-container">
-      <h1 className="title">Find your favorite places</h1>
+      <h1 className="title">FoodieMap</h1>
+      <h2 className="sub-title">Find your favorite places</h2>
     </div>
   );
 }

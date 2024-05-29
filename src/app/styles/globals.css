@@ -12,3 +12,9 @@ body {
 p {
   color: black;
 }
+
+.title-container .title{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing: 3px;
+  font-size: 35px;
+}
