@@ -2,7 +2,7 @@ import { GlobalContextProvider } from "./context/globalContext";
 import "./styles/globals.css";
 
 export const metadata = {
-  title: "FoodieMap",
+  title: "DineDiscover",
   description: "TBD",
 };
 
