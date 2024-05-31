@@ -1,5 +1,9 @@
 @import "~bulma/css/bulma.css";
 
+*::selection {
+  color: hsl(171, 100%, 36%);
+}
+
 body {
   font-family: "Arial", sans-serif;
 }
@@ -13,8 +17,9 @@ p {
   color: black;
 }
 
-.title-container .title{
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.title-container .title {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   letter-spacing: 3px;
   font-size: 35px;
 }
