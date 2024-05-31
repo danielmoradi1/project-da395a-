@@ -22,13 +22,9 @@ Simplifying the picking process...
 
 ## Demo
 
+![Demo_1](https://github.com/danielmoradi1/project-da395a-/assets/104915520/758f44d4-8566-47a4-a6d3-f6f19aae0c56)
+![Demo_2](https://github.com/danielmoradi1/project-da395a-/assets/104915520/33f10eb1-9398-4716-b649-91d0e888f383)
 
-https://github.com/danielmoradi1/project-da395a-/assets/104915520/44f4fd40-39dc-401d-a57c-ea8da5f4147d
-
-https://github.com/danielmoradi1/project-da395a-/assets/104915520/a4a1b258-00d5-448c-8010-a0faa85146f8
-
-
-Vid
 
 ## Setup
 
