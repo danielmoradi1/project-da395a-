@@ -50,6 +50,6 @@ Thereafter open [http://localhost:3000](http://localhost:3000) with your preferr
 ## Contributors
 
 🔥 Cooked 🔥 with passion, by the following contributors:
-[![contributors] (https://contrib.rocks/image?repo=danielmoradi1/project-da395a-)](https://github.com/danielmoradi1/project-da395a-/graphs/contributors)
+[![contributors](https://contrib.rocks/image?repo=danielmoradi1/project-da395a-)](https://github.com/danielmoradi1/project-da395a-/graphs/contributors)
 
 ## License
