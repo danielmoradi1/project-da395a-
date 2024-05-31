@@ -1,7 +1,3 @@
-export function clearLocalStorage() {
-  localStorage.clear();
-}
-
 export function loadLocalStorage(object) {
   if (typeof window !== "undefined") {
     const fetchedObject = localStorage.getItem(object);
