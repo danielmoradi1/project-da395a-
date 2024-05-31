@@ -25,7 +25,6 @@ Simplifying the picking process...
 ![Demo_1](https://github.com/danielmoradi1/project-da395a-/assets/104915520/758f44d4-8566-47a4-a6d3-f6f19aae0c56)
 ![Demo_2](https://github.com/danielmoradi1/project-da395a-/assets/104915520/33f10eb1-9398-4716-b649-91d0e888f383)
 
-
 ## Setup
 
 First, install the required dependencies by:
@@ -51,5 +50,6 @@ Thereafter open [http://localhost:3000](http://localhost:3000) with your preferr
 ## Contributors
 
 🔥 Cooked 🔥 with passion, by the following contributors:
+[![contributors](https://github.com/danielmoradi1/project-da395a-/graphs/contributors)]
 
 ## License
