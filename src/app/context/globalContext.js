@@ -40,7 +40,6 @@ export const GlobalContextProvider = ({ children }) => {
   }
 
   function addPlaces(place) {
-    console.log(place);
     setPlaces(place);
   }
 

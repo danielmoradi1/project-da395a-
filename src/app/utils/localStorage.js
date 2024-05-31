@@ -17,8 +17,3 @@ export function loadLocalStorage(object) {
 export function saveToLocalStorage(object, newObject) {
   localStorage.setItem(object, JSON.stringify(newObject));
 }
-
-// export function handleLocalStorageItem(){} eventuell toggle som utför antingen save || delete
-//beroende på värde/type prop m.h.a. ternary operator
-
-export function deleteFromLocalStorage(placeIndex) {}

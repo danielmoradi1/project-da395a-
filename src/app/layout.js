@@ -3,7 +3,8 @@ import "./styles/globals.css";
 
 export const metadata = {
   title: "DineDiscover",
-  description: "TBD",
+  description:
+    "DineDiscover aims simplifying the picking process of your next dining spot.",
 };
 
 export default function RootLayout({ children }) {

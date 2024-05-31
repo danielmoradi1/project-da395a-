@@ -13,7 +13,6 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
   const [isLoading, setIsLoading] = useState(false);
 
   async function searchPlace() {
-    console.log(`You have searched for ${type}s in ${city}`);
     if (!city || !type) {
       setError("Please select both a city and a type.");
       return;

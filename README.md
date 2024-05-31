@@ -26,8 +26,6 @@ DineDiscover aims simplifying the picking process of your next dining spot.
 
 ### Perhaps it is difficult to pick?
 
-#### DineDiscover has your back!
-
 ![Demo_2](https://github.com/danielmoradi1/project-da395a-/assets/104915520/33f10eb1-9398-4716-b649-91d0e888f383)
 
 ## Setup
