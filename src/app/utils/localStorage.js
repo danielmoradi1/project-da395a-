@@ -1,6 +1,3 @@
-export function clearLocalStorage() {
-  localStorage.clear();
-}
 // Function to load data from local storage or initialize an empty array if no data is found
 export function loadLocalStorage(object) {
   if (typeof window !== "undefined") {

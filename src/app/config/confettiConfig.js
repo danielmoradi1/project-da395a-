@@ -1,3 +1,4 @@
+//Sets configuration for confetti animation.
 const confettiConfig = {
   angle: 90,
   spread: 360,
