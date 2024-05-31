@@ -2,6 +2,7 @@ import { APIProvider, Map } from "@vis.gl/react-google-maps";
 import PinMarker from "./ui/PinMarker";
 import "../styles/map.css";
 
+// Define the MapsContainer component, which renders a map with markers based on given locations.
 export default function MapsContainer({ locations = [] }) {
   return (
     <div className="map-view">
