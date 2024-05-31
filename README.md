@@ -22,6 +22,12 @@ Simplifying the picking process...
 
 ## Demo
 
+
+https://github.com/danielmoradi1/project-da395a-/assets/104915520/44f4fd40-39dc-401d-a57c-ea8da5f4147d
+
+https://github.com/danielmoradi1/project-da395a-/assets/104915520/a4a1b258-00d5-448c-8010-a0faa85146f8
+
+
 Vid
 
 ## Setup
