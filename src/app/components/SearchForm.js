@@ -13,6 +13,7 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
   const [isLoading, setIsLoading] = useState(false);
 
   async function searchPlace() {
+    // Validation: check if both city and type are selected
     if (!city || !type) {
       setError("Please select both a city and a type.");
       return;
@@ -20,16 +21,16 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
     setError("");
     setIsLoading(true);
     try {
-      const response = await getPlaces(city, type);
+      const response = await getPlaces(city, type); // Fetch places
       if (response.error) {
         setError("An error occurred while fetching places.");
       } else {
-        addPlaces(response.results);
+        addPlaces(response.results); // Add fetched places
       }
     } catch (err) {
       setError("An error occurred while fetching places.");
     } finally {
-      setIsLoading(false);
+      setIsLoading(false); // Reset loading status
     }
   }
 
@@ -47,8 +48,8 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
       } else {
         const randomIndex = Math.floor(Math.random() * response.results.length);
         const randomPlace = response.results[randomIndex];
-        addPlaces([randomPlace]);
-        onFeelLucky();
+        addPlaces([randomPlace]); // Add fetched random place
+        onFeelLucky(); // Trigger feel lucky action
       }
     } catch (err) {
       setError("An error occurred while fetching places.");
