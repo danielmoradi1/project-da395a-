@@ -13,10 +13,9 @@ DineDiscover aims simplifying the picking process of your next dining spot.
 
 ## Motivation
 
-- **Next.js Routing**: Next.js offers simple and efficient routing, perfect for our project.
-- **Server-Side API Requests**: Google Places API requires requests to be made from the server-side to protect the API key and enhance security.
-- **Server-Side Design**: Next.js is optimized for server-side rendering, improving performance and SEO.
-- **Client-Side Alternatives**: If necessary, we can use the JavaScript kit for the client-side or a proxy to handle API requests.
+We chose React with Next.js for this project over Due and Angular for several reasons. One of these reasons is React’s  documentation and strong community support making it easy to find the resources needed. Additionally, all team members have prior experience with React from smaller projects, so continuing with it allows us to build on our existing knowledge.
+
+Another reason is React's component-based architecture which promotes modular and reusable code, making our application easier to manage. Next.js also offers a built-in routing system, simplifying navigation within the app.
 
 ## Demo
 
