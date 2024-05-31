@@ -96,11 +96,7 @@ export default function SearchForm({ addPlaces, onFeelLucky }) {
         </div>
       ) : (
         <div className="search-btn-container">
-          <ButtonInput
-            className="btn"
-            value={"Search"}
-            onClick={searchPlace}
-          />
+          <ButtonInput className="btn" value={"Search"} onClick={searchPlace} />
           <ButtonInput
             className="btn"
             value={"Roll The Dice"}
